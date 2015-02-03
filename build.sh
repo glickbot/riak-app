@@ -62,5 +62,6 @@ cp ../Info.plist Riak.app/Contents/
 
 cp ../riak.conf Riak.app/Contents/Resources/riak-2.0.4/etc/
 
+cp ../nw.icns Riak.app/Contents/Resources/
 
 cd ..
