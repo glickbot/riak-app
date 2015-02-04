@@ -64,7 +64,7 @@ cp ../riak.conf Riak.app/Contents/Resources/riak-2.0.4/etc/
 
 cp ../nw.icns Riak.app/Contents/Resources/
 
-if which appdmag > /dev/null 2>&1; then
+if which appdmg > /dev/null 2>&1; then
 
   if [ -e Riak204.dmg ]; then
     echo "Riak204.dmg exists, skipping dmg build"
