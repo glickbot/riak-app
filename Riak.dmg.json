@@ -1,0 +1,9 @@
+{ "title": "Riak 2.0.4",
+  "icon": "build_dir/Riak.app/Contents/Resources/nw.icns",
+  "background": "build_dir/Riak.app/Contents/Resources/app.nw/img/basho-logo-color-vert.png",
+  "icon-size": 80,
+  "contents":[
+    { "x": 348, "y": 100, "type": "link", "path": "/Applications" },
+    { "x": 92, "y": 100, "type": "file", "path": "build_dir/Riak.app" }
+    ]
+}
