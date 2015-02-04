@@ -64,10 +64,25 @@ cp ../riak.conf Riak.app/Contents/Resources/riak-2.0.4/etc/
 
 cp ../nw.icns Riak.app/Contents/Resources/
 
-if [ -e Riak204.dmg ]; then
+if which appdmag > /dev/null 2>&1; then
+
+  if [ -e Riak204.dmg ]; then
     echo "Riak204.dmg exists, skipping dmg build"
-else
+  else
     appdmg ../Riak.dmg.json Riak204.dmg
+    echo "Riak204.dmg built in build_dir"
+  fi
+
+else
+
+  echo "#####################################################"
+  echo "Install appdmg to build dmg file"
+  echo "    i.e. npm install appdmg"
+  echo "    more info: https://github.com/LinusU/node-appdmg"
+  echo "#####################################################"
+
 fi
 
 cd ..
+
+echo "Riak App built in build_dir"
