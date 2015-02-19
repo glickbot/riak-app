@@ -3,6 +3,8 @@ riak-app
 
 Riak App
 
+[http://basho.s3.amazonaws.com/Riak204.dmg](http://basho.s3.amazonaws.com/Riak204.dmg)
+
 #### What does this repo do?
 
 It builds a OSX Mac App for a self-contained instance of Riak
