@@ -9,8 +9,8 @@ var tray = new gui.Tray({ icon: 'img/riak.png' });
 var menu = new gui.Menu();
 
 var win = gui.Window.get();
-win.width=800;
-win.height=600;
+win.width=1280;
+win.height=768;
 
 $( document ).ready(function() {
     setup_event_callbacks();
@@ -145,7 +145,6 @@ function start_riak() {
 function toggle_riak_control() {
   document.getElementById('riak_control').contentWindow.location.reload();
   $('#riak_control_section').toggle();
-  return false;
 }
 
 function toggle_riak_logs() {
@@ -154,8 +153,6 @@ function toggle_riak_logs() {
   run_cmd('tail -n20 log/console.log', function(result){
     document.getElementById('riak_logs').value = result.stdout;
   });
-
-  return false;
 }
 
 function set_status(str) {

@@ -24,13 +24,13 @@
                         <div class="clear"></div>
                     </h3>
                     <ul class="depth-1 start active " style="display: block;">
-                        <li class="current"><a href="index.html" class="riak">Start Here</a></li>
+                        <li><a href="#mainarticle" class="riak">Start Here</a></li>
                         <li>
-                            <h4 onclick="toggle_riak_control();"><span>Riak Control</span></h4>
+                            <h4 onclick="toggle_riak_control();"><a href="#view-riak-control">Riak Control</a></h4>
                             <ul class="depth-2"><li><a href="#" class="riak">Click again to hide.</a></li></ul>
                         </li>
                         <li>
-                            <h4 onclick="toggle_riak_logs();"><span>View Logs</span></h4>
+                            <h4 onclick="toggle_riak_logs();"><a href="#view-logs">View Logs</a></h4>
                             <ul class="depth-2"><li><a href="#" class="riak">Click again to hide.</a></li></ul>
                         </li>
                     </ul>
@@ -90,10 +90,6 @@
                   <div id="header-inner">
                      <div class="icon-reorder" id="nav-toggle"></div>
                      
-                     <a class="logo" href="/index.html">
-                        <h1>Riak</h1>
-                     </a>
-                     
                      <div class="clear"></div>
                      <div class="header-rule"></div>
                   </div>
@@ -109,7 +105,7 @@
                 <p>Thank you for installing Riak! Below you'll find a summary of the functionality included in this dashboard.
                 </p>
                 
-                <h2>Riak Control</h2>
+                <h2 id="view-riak-control">Riak Control</h2>
 
                 <p>Riak Control is a web-based administrative console for inspecting and manipulating Riak clusters.</p>
                 <p>Click the "Riak Control" button on the left to show / hide the iframe. Alternatively you can directly visit <a href="http://localhost:8098/admin" target="_blank">http://localhost:8098/admin</a> to use this interface.</p>
@@ -121,7 +117,7 @@
                     <div class="clear">&nbsp;</div>
                 </div>
                 
-                <h2>View Logs</h2>
+                <h2 id="view-logs">View Logs</h2>
                 <p>Click the "View Logs" button on the left to show / hide the last 20 lines of log/console.log. Alternatively you can visit the log directory directly at <a href="../riak-2.0.4/log" target="_blank">../riak-2.0.4/log</a>.</p>
                 
                 <div id="riak_logs_section" style="display: none;">
