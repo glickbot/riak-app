@@ -12,11 +12,6 @@ if [ ! -e nwjs-v0.12.0-alpha2-osx-x64.zip ]; then
    curl -L -O http://dl.nwjs.io/v0.12.0-alpha2/nwjs-v0.12.0-alpha2-osx-x64.zip
 fi
 
-if [ ! -e bootstrap-3.3.2-dist.zip ]; then
-  echo "Downloading Bootstrap"
-  curl -L -O https://github.com/twbs/bootstrap/releases/download/v3.3.2/bootstrap-3.3.2-dist.zip
-fi
-
 if [ ! -e riak-2.0.4-OSX-x86_64.tar.gz ]; then
   echo "Downloading Riak"
   curl -L -O http://s3.amazonaws.com/downloads.basho.com/riak/2.0/2.0.4/osx/10.8/riak-2.0.4-OSX-x86_64.tar.gz
@@ -40,22 +35,6 @@ fi
 if [ ! -e Riak.app/Contents/Resources/riak-2.0.4 ]; then
   echo "Extracting Riak"
   ( cd Riak.app/Contents/Resources; tar -xzf ../../../riak-2.0.4-OSX-x86_64.tar.gz )
-fi
-
-if [ ! -e bootstrap-3.3.2-dist ]; then
-  echo "Extracting Bootstrap"
-  unzip bootstrap-3.3.2-dist.zip
-fi
-
-if [ ! -e Riak.app/Contents/Resources/app.nw/js/bootstrap.js ]; then
-  echo "Moving bootstrap into app"
-  cp -R bootstrap-3.3.2-dist/js Riak.app/Contents/Resources/app.nw
-  cp -R bootstrap-3.3.2-dist/css Riak.app/Contents/Resources/app.nw
-  cp -R bootstrap-3.3.2-dist/fonts Riak.app/Contents/Resources/app.nw
-fi
-
-if [ ! -e Riak.app/Contents/Resources/app.nw/js/jquery.min.js ]; then
-  ( cd Riak.app/Contents/Resources/app.nw/js; curl -O -L http://code.jquery.com/jquery.min.js )
 fi
 
 cp ../Info.plist Riak.app/Contents/

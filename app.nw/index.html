@@ -1,49 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Riak</title>
+<html class=" js no-flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en">
+    <head class="guide">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width" name="viewport">
+        <title>Riak</title>
+        <link href="css/all.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="css/basho-palette.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-tabs.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="css/print.css" media="print" rel="stylesheet" type="text/css">
+        <script src="js/all.js" type="text/javascript"></script><script src="js/main.js" type="text/javascript"></script><script>hljs.initHighlightingOnLoad();</script>
+        <style>@-webkit-keyframes popabgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popabgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;color:#AAA !important;display:inline !important;text-decoration:line-through !important;}#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/data/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr-gear:hover{-webkit-animation-name:popabgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr !important;animation-name:popabgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr:hover #abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr-gear{text-decoration:none !important;display:inline-block !important;}@media print{#abgkxjpiudifpjzlnzmjpqfrtbjwxmxhyr{display:none !important;}}</style>
+    </head>
+    <body class="riak">
+        <aside id="nav-container" role="complementary">
+            <nav class="overview" id="primary-nav" role="nav">
+                <div id="primary-nav-content">
+                    <div class="clear"></div>
+                    <h3 class="start active">
+                        <div class="icon-container"><span aria-hidden="true" class="nav-icon" data-icon=""></span></div>
+                        <span class="separator">|</span><span class="menu-title">Dashboard</span>
+                        <div class="clear"></div>
+                    </h3>
+                    <ul class="depth-1 start active " style="display: block;">
+                        <li class="current"><a href="index.html" class="riak">Start Here</a></li>
+                        <li>
+                            <h4 onclick="toggle_riak_control();"><span>Riak Control</span></h4>
+                            <ul class="depth-2"><li><a href="#" class="riak">Click again to hide.</a></li></ul>
+                        </li>
+                        <li>
+                            <h4 onclick="toggle_riak_logs();"><span>View Logs</span></h4>
+                            <ul class="depth-2"><li><a href="#" class="riak">Click again to hide.</a></li></ul>
+                        </li>
+                    </ul>
+                    <h3>
+                        <div class="icon-container"><span aria-hidden="true" class="nav-icon" data-icon=""></span></div>
+                        <span class="separator">|</span><span class="menu-title">Documentation</span>
+                        <div class="clear"></div>
+                    </h3>
+                    <ul class="depth-1">
+                        <li><a href="http://docs.basho.com/riak/latest/dev/taste-of-riak/" target="_blank" class="riak">A Taste of Riak</a></li>
+                        <li><a href="http://docs.basho.com/riak/latest/" target="_blank" class="riak">Riak Docs</a></li>
+                    </ul>
+                    <!--h3>
+                        <div class="icon-container"><span aria-hidden="true" class="nav-icon" data-icon=""></span></div>
+                        <span class="separator">|</span><span class="menu-title">Tutorial</span>
+                        <div class="clear"></div>
+                    </h3>
+                    <ul class="depth-1 ">
+                        <li><a href="#" class="riak">Basic CRUD</a></li>
+                        <li>
+                            <h4><span>Sample Application</span></h4>
+                            <ul class="depth-2 ">
+                                <li><a href="#" class="riak">Bucket Setup</a></li>
+                                <li><a href="#" class="riak">Parse Logs</a></li>
+                                <li><a href="#" class="riak">Insert Data</a></li>
+                                <li><a href="#" class="riak">Query Data</a></li>
+                            </ul>
+                        </li>
+                    </ul-->
+                    <h3>
+                        <div class="icon-container"><span aria-hidden="true" class="nav-icon" data-icon=""></span></div>
+                        <span class="separator">|</span><span class="menu-title">Actions</span>
+                        <div class="clear"></div>
+                    </h3>
+                    <ul class="depth-1 ">
+                        <li><a href="#" onclick="start_riak();" class="riak">Start Riak</a></li>
+                        <li><a href="#" onclick="stop_riak();" class="riak">Stop Riak</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul id="fixed-nav" style="display: block;">
+                <li>
+                    <a href="http://docs.basho.com/riak/latest/community/">
+                        <div class="icon-container"><span aria-hidden="true" class="nav-icon" data-icon=""></span></div>
+                        <span class="separator">|</span>Get Help
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div role="main">
 
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/riakapp.css" rel="stylesheet">
-  <style>
-  /** {
-    padding-left: 0;
-    padding-right: 0;
-  }*/
-  html, body {
-    height: 100%;
-    padding-top: 0;
-  }
-  #gears, #content, #riak_control {
-    height: 99%;
-    width: 100%;
-  }
+            <header class="masthead">
+               <div id="header">
+                  <div id="marketing-banner">
+                     <div class="temp-banner-text"><strong>Status:</strong> <span id="status-text">...</span></div>
+                  </div>
+                  <div id="header-inner">
+                     <div class="icon-reorder" id="nav-toggle"></div>
+                     
+                     <a class="logo" href="/index.html">
+                        <h1>Riak</h1>
+                     </a>
+                     
+                     <div class="clear"></div>
+                     <div class="header-rule"></div>
+                  </div>
+               </div>
+            </header>
 
-  </style>
-</head>
-<body>
-  <!-- <nav id="nav_bar" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Riak</a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-  <div id="content" align="center"></div>
-  <script src="main.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</body>
+            <div class="clear">&nbsp;</div>
+
+            <article class="mainarticle" id="mainarticle">
+                <header>
+                    <h1>Riak</h1>
+                </header>
+                <p>Thank you for installing Riak! Below you'll find a summary of the functionality included in this dashboard.
+                </p>
+                
+                <h2>Riak Control</h2>
+
+                <p>Riak Control is a web-based administrative console for inspecting and manipulating Riak clusters.</p>
+                <p>Click the "Riak Control" button on the left to show / hide the iframe. Alternatively you can directly visit <a href="http://localhost:8098/admin" target="_blank">http://localhost:8098/admin</a> to use this interface.</p>
+                <p>More information about Riak Control can be found at <a href="http://docs.basho.com/riak/latest/ops/advanced/riak-control" target="_blank">http://docs.basho.com/riak/latest/ops/advanced/riak-control</a></p>
+
+                <div id="riak_control_section" style="display: none;">
+                    <div class="clear">&nbsp;</div>
+                    <iframe width="100%" height="600px" id="riak_control" src="http://localhost:8098/admin"></iframe>
+                    <div class="clear">&nbsp;</div>
+                </div>
+                
+                <h2>View Logs</h2>
+                <p>Click the "View Logs" button on the left to show / hide the last 20 lines of log/console.log. Alternatively you can visit the log directory directly at <a href="../riak-2.0.4/log" target="_blank">../riak-2.0.4/log</a>.</p>
+                
+                <div id="riak_logs_section" style="display: none;">
+                    <div class="clear">&nbsp;</div>
+                    File: etc/console.log:
+                    <textarea id="riak_logs" style="font: 10px 'Lucida Console', Lucida, serif; width:100%; height:300px" readonly="readonly"></textarea>
+                    <div class="clear">&nbsp;</div>
+                </div>
+
+                <h2>Documentation</h3>
+                <p>If you're new to Riak, don't hesitate to visit "A taste of Riak" at <a href="http://docs.basho.com/riak/latest/dev/taste-of-riak/" target="_blank">http://docs.basho.com/riak/latest/dev/taste-of-riak</a>.</p>
+                <p>More useful information about Riak can be found at <a href="http://docs.basho.com/riak/latest/" target="_blank">http://docs.basho.com/riak/latest</a></p>
+
+                <h2>Actions</h2>
+                <p>Use the Riak Start / Stop buttons on the left to perform those actions on this Riak node. To exit this application, use the Riak icon in your upper task bar to select "quit". Doing this will automatically stop the running Riak instance.</p>
+
+                <div class="clear"></div>
+            </article>
+            <footer class="mastfooter">This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 Unported License</a><br>© 2011-2015&nbsp;<a href="http://www.basho.com/">Basho Technologies, Inc.</a></footer>
+        </div>
+    </body>
 </html>
