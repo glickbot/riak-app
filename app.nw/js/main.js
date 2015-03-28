@@ -1,7 +1,7 @@
 var gui = require('nw.gui');
 var EventEmitter = require('events').EventEmitter;
 
-var riakCwd = '../riak-2.0.4'
+var riakCwd = '../riak-2.0.5'
 var appRunner = new EventEmitter();
 
 var windowHidden = false;
