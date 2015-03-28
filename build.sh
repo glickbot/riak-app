@@ -29,7 +29,7 @@ fi
 
 if [ ! -e Riak.app ]; then
   echo "Moving Riak.app into place"
-  mv nwjs-v0.12.0-osx-x64/nwjs.app Riak.app
+  cp -R nwjs-v0.12.0-osx-x64/nwjs.app Riak.app
 fi
 
 if [ ! -e Riak.app/Contents/Resources/app.nw ]; then
@@ -40,22 +40,6 @@ fi
 if [ ! -e Riak.app/Contents/Resources/riak-2.0.5 ]; then
   echo "Extracting Riak"
   ( cd Riak.app/Contents/Resources; tar -xzf ../../../riak-2.0.5-OSX-x86_64.tar.gz )
-fi
-
-if [ ! -e bootstrap-3.3.4-dist ]; then
-  echo "Extracting Bootstrap"
-  unzip bootstrap-3.3.4-dist.zip
-fi
-
-if [ ! -e Riak.app/Contents/Resources/app.nw/js/bootstrap.js ]; then
-  echo "Moving bootstrap into app"
-  cp -R bootstrap-3.3.4-dist/js Riak.app/Contents/Resources/app.nw
-  cp -R bootstrap-3.3.4-dist/css Riak.app/Contents/Resources/app.nw
-  cp -R bootstrap-3.3.4-dist/fonts Riak.app/Contents/Resources/app.nw
-fi
-
-if [ ! -e Riak.app/Contents/Resources/app.nw/js/jquery.min.js ]; then
-  ( cd Riak.app/Contents/Resources/app.nw/js; curl -O -L http://code.jquery.com/jquery.min.js )
 fi
 
 cp ../Info.plist Riak.app/Contents/
