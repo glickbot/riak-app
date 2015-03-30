@@ -116,6 +116,9 @@ function build_nw_menu() {
 
 function stop_riak() {
   set_status("Stopping Riak...");
+
+  $('#riak_control_section').hide();
+
   run_cmd('bin/riak stop', function(result){
     if (result.isError !== true) {
       set_status("Riak Stopped");
@@ -123,6 +126,9 @@ function stop_riak() {
       set_status("Unable to stop Riak: " + result.stderr);
     }
   });
+
+  document.getElementById('riak_control').contentWindow.location.reload();
+
   return false;
 }
 
