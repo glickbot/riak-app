@@ -107,18 +107,17 @@
                 
                 <h2 id="view-riak-control">Riak Control</h2>
 
-                <p>Riak Control is a web-based administrative console for inspecting and manipulating Riak clusters.</p>
-                <p>Click the "Riak Control" button on the left to show / hide the iframe. Alternatively you can directly visit <a href="http://localhost:8098/admin" target="_blank">http://localhost:8098/admin</a> to use this interface.</p>
-                <p>More information about Riak Control can be found at <a href="http://docs.basho.com/riak/latest/ops/advanced/riak-control" target="_blank">http://docs.basho.com/riak/latest/ops/advanced/riak-control</a></p>
-
                 <div id="riak_control_section" style="display: none;">
                     <div class="clear">&nbsp;</div>
                     <iframe width="100%" height="600px" id="riak_control" src="http://localhost:8098/admin"></iframe>
                     <div class="clear">&nbsp;</div>
                 </div>
+
+                <p>Riak Control is a web-based administrative console for inspecting and manipulating Riak clusters.</p>
+                <p>Click the "Riak Control" button on the left to show / hide the iframe. Alternatively you can directly visit <a href="http://localhost:8098/admin" target="_blank">http://localhost:8098/admin</a> to use this interface.</p>
+                <p>More information about Riak Control can be found at <a href="http://docs.basho.com/riak/latest/ops/advanced/riak-control" target="_blank">http://docs.basho.com/riak/latest/ops/advanced/riak-control</a></p>
                 
                 <h2 id="view-logs">View Logs</h2>
-                <p>Click the "View Logs" button on the left to show / hide the last 20 lines of log/console.log. Alternatively you can visit the log directory directly at <a href="../riak-2.0.5/log" target="_blank">../riak-2.0.5/log</a>.</p>
                 
                 <div id="riak_logs_section" style="display: none;">
                     <div class="clear">&nbsp;</div>
@@ -126,6 +125,8 @@
                     <textarea id="riak_logs" style="font: 10px 'Lucida Console', Lucida, serif; width:100%; height:300px" readonly="readonly"></textarea>
                     <div class="clear">&nbsp;</div>
                 </div>
+
+                <p>Click the "View Logs" button on the left to show / hide the last 20 lines of log/console.log. Alternatively you can visit the log directory directly at <a href="../riak-2.0.5/log" target="_blank">../riak-2.0.5/log</a>.</p>
 
                 <h2>Documentation</h3>
                 <p>If you're new to Riak, don't hesitate to visit "A taste of Riak" at <a href="http://docs.basho.com/riak/latest/dev/taste-of-riak/" target="_blank">http://docs.basho.com/riak/latest/dev/taste-of-riak</a>.</p>

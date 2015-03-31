@@ -8,45 +8,16 @@ var windowHidden = false;
 var tray = new gui.Tray({ icon: 'img/riak.png' });
 var menu = new gui.Menu();
 
+var statusChecker = null;
+
 var win = gui.Window.get();
 win.width=1280;
 win.height=768;
 
 $( document ).ready(function() {
-    setup_event_callbacks();
     build_nw_menu();
     start_riak();
 });
-
-function setup_event_callbacks() {
-  appRunner.on('start riak', function(cb){
-    set_status("Starting Riak...");
-    run_cmd('bin/riak start', function(result){
-      appRunner.emit('start riak returned', { result: result, callback: cb } );
-    });
-  });
-
-  appRunner.on('start riak returned', function(start_return){
-    if (start_return.result.isError){
-      start_return.callback(start_return.result);
-    } else {
-      set_status("Riak Started, waiting for riak_kv...");
-      appRunner.emit('wait for riak', start_return);
-    }
-  });
-
-  appRunner.on('wait for riak', function(start_return){
-    run_cmd('bin/riak-admin wait-for-service riak_kv', function(result){
-    //run_cmd('sh -c "sleep 5 && false"', function(result){
-      if (result.isError){
-        start_return.callback(result);
-      } else {
-        set_status("Riak Running");
-        start_return.callback(start_return.result);
-      }
-    });
-  });
-}
 
 function run_cmd(cmd, callback) {
   console.log("executing " + cmd)
@@ -90,15 +61,13 @@ function build_nw_menu() {
     label: 'quit',
     click: function() {
       set_status("Stopping Riak...");
+
       try {
-        run_cmd('bin/riak stop', function(result){
-          if (result.isError !== true) {
-            set_status("Riak Stopped");
-            gui.Window.get().close(true);
-          } else {
-            set_status("Unable to stop Riak: " + result.stderr);
-            gui.Window.get().close(true);
-          }
+        run_cmd('bin/stop_riak.sh', function(result){
+          stop_status_check();
+          set_status(result.stdout);
+          document.getElementById('riak_control').contentWindow.location.reload();
+          gui.Window.get().close(true);
         });
       } catch (err)  {
         console.log(err);
@@ -116,35 +85,42 @@ function build_nw_menu() {
 
 function stop_riak() {
   set_status("Stopping Riak...");
-
-  $('#riak_control_section').hide();
-
-  run_cmd('bin/riak stop', function(result){
-    if (result.isError !== true) {
-      set_status("Riak Stopped");
-    } else {
-      set_status("Unable to stop Riak: " + result.stderr);
-    }
+  run_cmd('bin/stop_riak.sh', function(result){
+    stop_status_check();
+    set_status(result.stdout);
+    document.getElementById('riak_control').contentWindow.location.reload();
   });
-
-  document.getElementById('riak_control').contentWindow.location.reload();
 
   return false;
 }
 
-function start_riak() {
-  appRunner.emit('start riak', function(result){
-    console.log("Riak Startup Complete");
-    if (result.isError){
-      if (result.stderr == "Node is already running!\n"){
-        set_status("Riak Running");
-      } else {
-        set_status("Unable to start Riak: " + result.stderr);
-      }
-    } else {
-      set_status("Riak Running");
-    }
+function check_riak() {
+  run_cmd('bin/check_riak.sh', function(result){
+    set_status(result.stdout);
   });
+
+  return false;
+}
+
+function start_status_check() {
+  (function(){
+      check_riak();
+      statusChecker = setTimeout(arguments.callee, 10000);
+  })();
+}
+
+function stop_status_check() {
+  clearTimeout(statusChecker);
+}
+
+function start_riak() {
+  set_status("Starting Riak and waiting for riak_kv...");
+
+  run_cmd('bin/start_riak.sh', function(result){
+      set_status(result.stdout);
+      start_status_check();
+  });
+
   return false;
 }
 

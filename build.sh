@@ -7,7 +7,7 @@ fi
 
 if [ ! -e deps ]; then
   echo "Making deps directory"
-  mkdir build_dir
+  mkdir deps
 fi
 
 cd deps
@@ -47,6 +47,8 @@ fi
 cp ../Info.plist Riak.app/Contents/
 
 cp ../riak.conf Riak.app/Contents/Resources/riak-2.0.5/etc/
+
+cp ../bin/* Riak.app/Contents/Resources/riak-2.0.5/bin/
 
 cp ../nw.icns Riak.app/Contents/Resources/
 
