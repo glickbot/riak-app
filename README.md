@@ -1,30 +1,52 @@
 riak-app
 ========
 
-Riak App
+Riak.app is a simple GUI wrapper for Riak on Mac OSX. Download the dmg file below to get started.
 
-[http://basho.s3.amazonaws.com/Riak204.dmg](http://basho.s3.amazonaws.com/Riak204.dmg)
+## Download
 
-#### What does this repo do?
+[http://riak-tools.s3.amazonaws.com/Riak205.dmg](http://riak-tools.s3.amazonaws.com/Riak205.dmg)
 
-It builds a OSX Mac App for a self-contained instance of Riak
+## Install
 
-#### What does the app do?
++ Double click Riak205.dmg
++ Click and drag Riak into your Applications folder
 
-* Starts 1 Riak instance
-* Opens riak control
-* Creates a menu bar icon ( so you can show/hide the window )
-* Lets you stop riak with the menu bar icon
+![image](https://raw.githubusercontent.com/basho-labs/riak-app/master/docs/install.png)
 
-#### What it should do?
+## Start Riak
 
-* Run more than one instance
-* Have a UI for better control
+After opening Riak.app, it will:
 
-#### Building
++ Start 1 Riak instance
++ Create a menu bar icon with buttons to show/hide the window
 
-    git clone https://github.com/glickbot/riak-app
+![image](https://raw.githubusercontent.com/basho-labs/riak-app/master/docs/getting_started.png)
 
+## Usage
+
+Once Riak is running, a few tasks can be performed from the left navigation drawer in the app interface:
+
++ View the Riak Control dashboard
++ View recent entries from console.log
++ Start / Stop Riak
+
+![image](https://raw.githubusercontent.com/basho-labs/riak-app/master/docs/control.png)
+
+The current status of Riak (Running or Stopped) can be found in the status bar at the top of the app interface.
+
+![image](https://raw.githubusercontent.com/basho-labs/riak-app/master/docs/status.png)
+
+## Stop Riak
+
+Riak can be stopped using either of these methods:
+
++ Click the menu bar icon and select **quit**
++ Click **Actions -> Stop Riak** from the left navigation drawer
+
+## Contributing
+
+    git clone https://github.com/basho-labs/riak-app
     ./build.sh
 
-Riak.app will be built in ./build_dir
+After downloading dependencies, Riak.app will be built in `./build_dir`
