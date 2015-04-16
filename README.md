@@ -46,8 +46,10 @@ Riak can be stopped using either of these methods:
 
 ## Contributing
 
-    git clone https://github.com/basho-labs/riak-app
-    ./build.sh
+```
+git clone https://github.com/basho-labs/riak-app
+./build.sh
+```
 
 After downloading dependencies, Riak.app will be built in `./build_dir`
 
@@ -56,6 +58,8 @@ After downloading dependencies, Riak.app will be built in `./build_dir`
 + Modify `RIAK_PACKAGE_URL`, `RIAK_PACKAGE`, `RIAK_DIR`, and `RIAK_DMG` in `build.sh`
 + Run the following:
 
-    ./clean.sh
-    ./build.sh
-    ./deploy.sh # AWS credentials required
+```
+./clean.sh
+./build.sh
+./deploy.sh # AWS credentials required
+```
