@@ -5,11 +5,11 @@ Riak.app is a simple GUI wrapper for Riak on Mac OSX. Download the dmg file belo
 
 ## Download
 
-[http://riak-tools.s3.amazonaws.com/Riak210.dmg](http://riak-tools.s3.amazonaws.com/Riak210.dmg)
+[http://riak-tools.s3.amazonaws.com/Riak211.dmg](http://riak-tools.s3.amazonaws.com/Riak211.dmg)
 
 ## Install
 
-+ Double click Riak210.dmg
++ Double click Riak211.dmg
 + Click and drag Riak into your Applications folder
 
 ![image](https://raw.githubusercontent.com/basho-labs/riak-app/master/docs/install.png)

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-RIAK_PACKAGE_URL="http://s3.amazonaws.com/downloads.basho.com/riak/2.1/2.1.0/osx/10.8"
-RIAK_PACKAGE="riak-2.1.0-OSX-x86_64.tar.gz"
-RIAK_DIR="riak-2.1.0"
-RIAK_DMG="Riak210.dmg"
+RIAK_PACKAGE_URL="http://s3.amazonaws.com/downloads.basho.com/riak/2.1/2.1.1/osx/10.8"
+RIAK_PACKAGE="riak-2.1.1-OSX-x86_64.tar.gz"
+RIAK_DIR="riak-2.1.1"
+RIAK_DMG="Riak211.dmg"
 
 if [ ! -e build_dir ]; then
   echo "Making build directory"
