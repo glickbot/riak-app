@@ -17,9 +17,9 @@ fi
 
 cd deps
 
-if [ ! -e nwjs-v0.12.0-osx-x64.zip ]; then
+if [ ! -e nwjs-v0.12.3-osx-x64.zip ]; then
    echo "Downloading NWJS"
-   curl -L -O http://dl.nwjs.io/v0.12.0/nwjs-v0.12.0-osx-x64.zip
+   curl -L -O http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-osx-x64.zip
 fi
 
 if [ ! -e $RIAK_PACKAGE ]; then
@@ -27,16 +27,16 @@ if [ ! -e $RIAK_PACKAGE ]; then
   curl -L -O $RIAK_PACKAGE_URL/$RIAK_PACKAGE
 fi
 
-if [ ! -e nwjs-v0.12.0-osx-x64 ]; then
+if [ ! -e nwjs-v0.12.3-osx-x64 ]; then
   echo "Extracting NWJS app"
-  unzip nwjs-v0.12.0-osx-x64.zip
+  unzip nwjs-v0.12.3-osx-x64.zip
 fi
 
 cd ../build_dir
 
 if [ ! -e Riak.app ]; then
   echo "Moving Riak.app into place"
-  cp -R ../deps/nwjs-v0.12.0-osx-x64/nwjs.app Riak.app
+  cp -R ../deps/nwjs-v0.12.3-osx-x64/nwjs.app Riak.app
 fi
 
 if [ ! -e Riak.app/Contents/Resources/app.nw ]; then
@@ -62,6 +62,16 @@ cp ../riak.conf Riak.app/Contents/Resources/$RIAK_DIR/etc/
 cp ../bin/* Riak.app/Contents/Resources/$RIAK_DIR/bin/
 
 cp ../nw.icns Riak.app/Contents/Resources/
+
+cd Riak.app/Contents/Resources
+virtualenv python
+virtualenv python --relocatable
+source python/bin/activate
+easy_install jupyter
+pip install riak
+mkdir notebook
+cp ../../../../TasteOfRiak-Python.ipynb ./notebook
+cd ../../../
 
 if which appdmg > /dev/null 2>&1; then
 

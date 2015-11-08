@@ -13,6 +13,7 @@ else
       echo "Riak Running"
     else
       if echo "$output" | grep --quiet ulimit; then
+        bin/start_jupyter.sh
         echo "Riak Running"
       else
         echo "Problem starting Riak: $output"

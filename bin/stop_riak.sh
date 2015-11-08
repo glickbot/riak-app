@@ -10,5 +10,5 @@ fi
 if [ "$pid" != "" ]; then
   kill -9 $pid
 fi
-
+bin/stop_jupyter.sh
 echo "Riak Stopped"
