@@ -65,7 +65,7 @@ cp ../nw.icns Riak.app/Contents/Resources/
 
 mkdir -p $(pwd)/python-virtualenv/lib/python2.7/site-packages
 export PYTHONPATH=$(pwd)/python-virtualenv/lib/python2.7/site-packages
-export PATH=$(pwd)/python-virtualenv/bin
+export PATH=$PATH:$(pwd)/python-virtualenv/bin
 easy_install --prefix=$(pwd)/python-virtualenv virtualenv
 
 cd Riak.app/Contents/Resources
